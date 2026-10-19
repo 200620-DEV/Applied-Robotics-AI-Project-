@@ -1,4 +1,5 @@
 GRID_SIZE = 5
+OBSTACLES = {(1, 1), (2, 3), (3, 2)}
 
 class Robot:
     def __init__(self):
@@ -12,6 +13,8 @@ class Robot:
         ny = self.y + dy
         if not (0 <= nx < GRID_SIZE and 0 <= ny < GRID_SIZE):
             print("Wall ahead, can't move", direction)
+        elif (nx, ny) in OBSTACLES:
+            print("Obstacle ahead, can't move", direction)
         else:
             self.x = nx
             self.y = ny
@@ -22,12 +25,14 @@ class Robot:
             for x in range(GRID_SIZE):
                 if (x, y) == (self.x, self.y):
                     row += "R "
+                elif (x, y) in OBSTACLES:
+                    row += "# "
                 else:
                     row += ". "
             print(row)
         print()
 
 robot = Robot()
-for step in ["right", "right", "down", "down", "down", "down", "down"]:
+for step in ["right", "right", "down", "down", "down", "right", "left", "up", "down"]:
     robot.move(step)
     robot.show()
