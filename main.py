@@ -1,5 +1,6 @@
 GRID_SIZE = 5
 OBSTACLES = {(1, 1), (2, 3), (3, 2)}
+GOAL = (4, 4)
 
 class Robot:
     def __init__(self):
@@ -19,6 +20,9 @@ class Robot:
             self.x = nx
             self.y = ny
 
+    def at_goal(self):
+        return (self.x, self.y) == GOAL
+
     def show(self):
         for y in range(GRID_SIZE):
             row = ""
@@ -27,12 +31,17 @@ class Robot:
                     row += "R "
                 elif (x, y) in OBSTACLES:
                     row += "# "
+                elif (x, y) == GOAL:
+                    row += "G "
                 else:
                     row += ". "
             print(row)
         print()
 
 robot = Robot()
-for step in ["right", "right", "down", "down", "down", "right", "left", "up", "down"]:
+for step in ["right"] * 4 + ["down"] * 4:
     robot.move(step)
     robot.show()
+    if robot.at_goal():
+        print("Goal reached!")
+        break
