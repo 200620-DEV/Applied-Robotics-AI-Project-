@@ -33,3 +33,5 @@ Project module at the University of Hertfordshire.
 ## Author
 
 PUROHIT DEV PRAMOD
+   - Goal square (G): the program prints "Goal reached!" when the robot gets there
+   
