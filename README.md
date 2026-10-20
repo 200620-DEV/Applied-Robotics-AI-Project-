@@ -35,3 +35,8 @@ Project module at the University of Hertfordshire.
 PUROHIT DEV PRAMOD
    - Goal square (G): the program prints "Goal reached!" when the robot gets there
    
+## Branching strategy
+- main: stable, tested code only
+- Dev: development branch, new work is committed here first
+- Changes reach main through a pull request from Dev
+- Each change matches a Trello card and has a short commit message
