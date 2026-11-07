@@ -40,3 +40,7 @@ PUROHIT DEV PRAMOD
 - Dev: development branch, new work is committed here first
 - Changes reach main through a pull request from Dev
 - Each change matches a Trello card and has a short commit message
+## Practice projects
+See [projects/](projects/README.md) for six standalone robotics and AI
+examples: A* path planning, PID control, Kalman filter, arm kinematics,
+Q-learning and a neural network from scratch.
